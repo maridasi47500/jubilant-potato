@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Look-Alike</title>
+  <link rel="stylesheet" href="styles.css">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <%= yield %>
+  <header>
+    <nav>
+      <a href="#">Gmail</a>
+      <a href="#">Images</a>
+    </nav>
+  </header>
+  <main>
+    <img src="google-logo.png" alt="Google Logo" class="logo">
+    <div class="search-bar">
+      <input type="text" placeholder="Search Google or type URL">
+      <button>Google Search</button>
+      <button>I'm Feeling Lucky</button>
+    </div>
+  </main>
+  <footer>
+    <p>Google offered in:</p>
+    <a href="#">Français</a>
+    <a href="#">Español</a>
+  </footer>
+</body>
+</html>
+
