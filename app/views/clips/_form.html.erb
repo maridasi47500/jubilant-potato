@@ -1,0 +1,43 @@
+<%= form_with(model: clip) do |form| %>
+  <% if clip.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(clip.errors.count, "error") %> prohibited this clip from being saved:</h2>
+
+      <ul>
+        <% clip.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, params[:titre] %>
+  </div>
+
+  <div>
+    <%= form.label :link, style: "display: block" %>
+    <span>https://youtube.com/?v=</span>
+    <%= form.text_field :link, params[:lienvid] %>
+  </div>
+
+  <div>
+    <%= form.label :artist_id, style: "display: block" %>
+    <%= form.number_field :artist_id %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :sortie, style: "display: block" %>
+    <%= form.text_field :sortie %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
